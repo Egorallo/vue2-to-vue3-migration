@@ -2,24 +2,24 @@ import { createStore } from 'vuex'
 
 
 const store = createStore({
-  state: {
-    todos: [
-        "demo todo"
-    ],
+  state() {
+    return {
+      todos: ['demo todo']
+    }
   },
   mutations: {
-    addTodo: (state, newTodo) => {
+    addTodo(state, newTodo) {
         state.todos.push(newTodo);
     },
-    removeTodo: (state, index) => {
+    removeTodo(state, index) {
         state.todos.splice(index, 1);
     },
   },
   actions: {
-    addTodo: (context, newTodo) => {
-        context.commit('addTodo', newTodo);
+    addTodo(context, payload) {
+        context.commit('addTodo', payload.newTodo);
     },
-    removeTodo: (context, index) => {
+    removeTodo(context, index){
         context.commit('removeTodo', index);
     },
   }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1><center>To-Do App</center></h1>
+    <h1>To-Do App</h1>
     <hr />
     <AddTodo />
     <hr />
@@ -8,10 +8,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TodoList from "./components/TodoList.vue";
 import AddTodo from "./components/AddTodo.vue";
-export default {
-  components: {TodoList, AddTodo},
-};
+
 </script>
